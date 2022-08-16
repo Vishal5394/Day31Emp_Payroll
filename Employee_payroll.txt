@@ -29,3 +29,7 @@ mysql> desc employee_payroll;
 | start_Date | date        | NO   |     | NULL    |       |
 +------------+-------------+------+-----+---------+-------+
 4 rows in set (20.62 sec)
+
+mysql> INSERT INTO employee_payroll values(1,'Soham',12000,'2022-05-03'),(2,'Shyam',15000,'2021-08-09'),(3,'Mayur',25000,'2020-07-06'),(4,'Akhil',18000,'2021-03-02'),(5,'Amar',15000,'2021-09-07');
+Query OK, 5 rows affected (1.48 sec)
+Records: 5  Duplicates: 0  Warnings: 0
