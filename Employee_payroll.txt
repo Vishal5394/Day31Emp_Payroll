@@ -14,3 +14,18 @@ mysql> show databases;
 | vishaldb           |
 +--------------------+
 7 rows in set (0.00 sec)
+mysql> use payroll_service;
+Database changed
+mysql> create table employee_payroll(Emp_Id int(5) not null primary key,Emp_name varchar(25) not null,Emp_salary int(20) not null,start_Date Date not null);
+Query OK, 0 rows affected, 2 warnings (25.00 sec)
+
+mysql> desc employee_payroll;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| Emp_Id     | int         | NO   | PRI | NULL    |       |
+| Emp_name   | varchar(25) | NO   |     | NULL    |       |
+| Emp_salary | int         | NO   |     | NULL    |       |
+| start_Date | date        | NO   |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (20.62 sec)
