@@ -66,3 +66,24 @@ mysql> select *FROM employee_payroll WHERE start_Date BETWEEN CAST('2018-01-01'A
 |      6 | Bill     |      18000 | 2020-09-07 |
 +--------+----------+------------+------------+
 6 rows in set (0.23 sec)
+
+mysql> ALTER table employee_payroll ADD Emp_gender varchar(25);
+Query OK, 0 rows affected (11.18 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE employee_payroll set Emp_gender = 'Male' where Emp_name ='Bill' or Emp_name = 'Soham' or Emp_name = 'Shyam' or Emp_name = 'Mayur'or Emp_name = 'Akhil'or Emp_name = 'Amar';
+Query OK, 6 rows affected (3.25 sec)
+Rows matched: 6  Changed: 6  Warnings: 0
+
+mysql> select * FROM employee_payroll;
++--------+----------+------------+------------+------------+
+| Emp_Id | Emp_name | Emp_salary | start_Date | Emp_gender |
++--------+----------+------------+------------+------------+
+|      1 | Soham    |      12000 | 2022-05-03 | Male       |
+|      2 | Shyam    |      15000 | 2021-08-09 | Male       |
+|      3 | Mayur    |      25000 | 2020-07-06 | Male       |
+|      4 | Akhil    |      18000 | 2021-03-02 | Male       |
+|      5 | Amar     |      15000 | 2021-09-07 | Male       |
+|      6 | Bill     |      18000 | 2020-09-07 | Male       |
++--------+----------+------------+------------+------------+
+6 rows in set (0.00 sec)
