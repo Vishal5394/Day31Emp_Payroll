@@ -148,3 +148,78 @@ mysql> SELECT COUNT(Emp_salary) FROM employee_payroll WHERE Emp_gender = 'Male';
 |                 6 |
 +-------------------+
 1 row in set (0.00 sec)
+
+mysql> ALTER table employee_payroll ADD (Emp_address varchar(255), Emp_phoneNumber varchar(255), Emp_department varchar(255)) ;
+Query OK, 0 rows affected (0.95 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql>  UPDATE employee_payroll set Emp_address = 'Pune'  where  Emp_name = 'Soham' or Emp_name = 'Mayur'or Emp_name = 'Amar' or Emp_name = 'Shobha';
+Query OK, 4 rows affected (0.19 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql>  UPDATE employee_payroll set Emp_address = 'Mumbai'  where  Emp_name = 'Shyam' or Emp_name = 'Akhil'or Emp_name = 'Boby' or Emp_name = 'Sandhya';
+Query OK, 4 rows affected (0.04 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql>  UPDATE employee_payroll set Emp_address = 'Banglore'  where  Emp_name = 'Bill' or Emp_name = 'Reshma';
+Query OK, 2 rows affected (0.25 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql>  UPDATE employee_payroll set Emp_phonenumber='7514869585', Emp_department= 'Supervisor' where Emp_Id = 1;
+Query OK, 1 row affected (1.88 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll set Emp_phonenumber='7583537225', Emp_department= 'Quality' where Emp_Id = 2;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll set Emp_phoneNumber = 8547695231, Emp_department='trainer' where Emp_Id=3;
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_phoneNumber = '8875963240', Emp_department='HR' where Emp_Id=4;
+Query OK, 1 row affected (1.78 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_phoneNumber = '8875564240', Emp_department='Manager' where Emp_Id=5;
+Query OK, 1 row affected (1.68 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_phoneNumber = '9775564240', Emp_department='Accountant' where Emp_Id=6;
+Query OK, 1 row affected (1.90 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_phoneNumber = '97758745150', Emp_department='Accountant' where Emp_Id=7;
+Query OK, 1 row affected (0.15 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_phoneNumber = '9775548650', Emp_department='HR' where Emp_Id=8;
+Query OK, 1 row affected (0.25 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_phoneNumber = '775548650', Emp_department='Clerk' where Emp_Id=9;
+Query OK, 1 row affected (1.52 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_phoneNumber = '9856248650', Emp_department='Accountant' where Emp_Id=10;
+Query OK, 1 row affected (0.73 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from payroll_service;
+ERROR 1146 (42S02): Table 'payroll_service.payroll_service' doesn't exist
+mysql> SELECT * FROM employee_payroll;
++--------+----------+------------+------------+------------+-------------+-----------------+----------------+
+| Emp_Id | Emp_name | Emp_salary | start_Date | Emp_gender | Emp_address | Emp_phoneNumber | Emp_department |
++--------+----------+------------+------------+------------+-------------+-----------------+----------------+
+|      1 | Soham    |      12000 | 2022-05-03 | Male       | Pune        | 7514869585      | Supervisor     |
+|      2 | Shyam    |      15000 | 2021-08-09 | Male       | Mumbai      | 7583537225      | Quality        |
+|      3 | Mayur    |      25000 | 2020-07-06 | Male       | Pune        | 8547695231      | trainer        |
+|      4 | Akhil    |      18000 | 2021-03-02 | Male       | Mumbai      | 8875963240      | HR             |
+|      5 | Amar     |      15000 | 2021-09-07 | Male       | Pune        | 8875564240      | Manager        |
+|      6 | Bill     |      18000 | 2020-09-07 | Male       | Banglore    | 9775564240      | Accountant     |
+|      7 | Boby     |      12000 | 2022-07-05 | Female     | Mumbai      | 97758745150     | Accountant     |
+|      8 | Reshma   |      15000 | 2021-05-04 | Female     | Banglore    | 9775548650      | HR             |
+|      9 | Sandhya  |      12000 | 2021-09-08 | Female     | Mumbai      | 775548650       | Clerk          |
+|     10 | Shobha   |      13000 | 2021-02-04 | Female     | Pune        | 9856248650      | Accountant     |
++--------+----------+------------+------------+------------+-------------+-----------------+----------------+
+10 rows in set (0.00 sec)
