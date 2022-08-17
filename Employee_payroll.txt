@@ -223,3 +223,69 @@ mysql> SELECT * FROM employee_payroll;
 |     10 | Shobha   |      13000 | 2021-02-04 | Female     | Pune        | 9856248650      | Accountant     |
 +--------+----------+------------+------------+------------+-------------+-----------------+----------------+
 10 rows in set (0.00 sec)
+
+
+mysql> ALTER table employee_payroll ADD (Emp_BasicPay int(25), Emp_deduction float(25), Emp_TaxablePay float(25), Emp_IncomeTax float(25), Emp_NetPay float(25)) ;
+Query OK, 0 rows affected, 1 warning (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql>  UPDATE employee_payroll  set Emp_BasicPay = '12000', Emp_deduction='1000',Emp_TaxablePay='500', Emp_IncomeTax = '0', Emp_NetPay= 10500 where Emp_Id=1;
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_BasicPay = '15000', Emp_deduction='1000',Emp_TaxablePay='500', Emp_IncomeTax = '0', Emp_NetPay= 13500 where Emp_Id=2;
+Query OK, 1 row affected (0.14 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_BasicPay = '25000', Emp_deduction='2000',Emp_TaxablePay='1000', Emp_IncomeTax = '0', Emp_NetPay= 22000 where Emp_Id=3;
+Query OK, 1 row affected (0.11 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_BasicPay = '18000', Emp_deduction='1500',Emp_TaxablePay='500', Emp_IncomeTax = '0', Emp_NetPay= 16000 where Emp_Id=4;
+Query OK, 1 row affected (0.14 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_BasicPay = '15000', Emp_deduction='1000',Emp_TaxablePay='500', Emp_IncomeTax = '0', Emp_NetPay= 13500 where Emp_Id=5;
+Query OK, 1 row affected (0.13 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_BasicPay = '18000', Emp_deduction='1500',Emp_TaxablePay='500', Emp_IncomeTax = '0', Emp_NetPay= 16000 where Emp_Id=6;
+Query OK, 1 row affected (0.14 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_BasicPay = '12000', Emp_deduction='1000',Emp_TaxablePay='500', Emp_IncomeTax = '0', Emp_NetPay= 10500 where Emp_Id=7;
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_BasicPay = '15000', Emp_deduction='1000',Emp_TaxablePay='500', Emp_IncomeTax = '0', Emp_NetPay= 13500 where Emp_Id=8;
+Query OK, 1 row affected (0.15 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_BasicPay = '12000', Emp_deduction='1000',Emp_TaxablePay='500', Emp_IncomeTax = '0', Emp_NetPay= 10500 where Emp_Id=9;
+Query OK, 1 row affected (0.15 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  UPDATE employee_payroll  set Emp_BasicPay = '13000', Emp_deduction='1000',Emp_TaxablePay='500', Emp_IncomeTax = '0', Emp_NetPay= 11500 where Emp_Id=10;
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> ALTER TABLE employee_payroll DROP COLUMN Emp_salary;
+Query OK, 0 rows affected (0.14 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM employee_payroll;
++--------+----------+------------+------------+-------------+-----------------+----------------+--------------+---------------+----------------+---------------+------------+
+| Emp_Id | Emp_name | start_Date | Emp_gender | Emp_address | Emp_phoneNumber | Emp_department | Emp_BasicPay | Emp_deduction | Emp_TaxablePay | Emp_IncomeTax | Emp_NetPay |
++--------+----------+------------+------------+-------------+-----------------+----------------+--------------+---------------+----------------+---------------+------------+
+|      1 | Soham    | 2022-05-03 | Male       | Pune        | 7514869585      | Supervisor     |        12000 |          1000 |            500 |             0 |      10500 |
+|      2 | Shyam    | 2021-08-09 | Male       | Mumbai      | 7583537225      | Quality        |        15000 |          1000 |            500 |             0 |      13500 |
+|      3 | Mayur    | 2020-07-06 | Male       | Pune        | 8547695231      | trainer        |        25000 |          2000 |           1000 |             0 |      22000 |
+|      4 | Akhil    | 2021-03-02 | Male       | Mumbai      | 8875963240      | HR             |        18000 |          1500 |            500 |             0 |      16000 |
+|      5 | Amar     | 2021-09-07 | Male       | Pune        | 8875564240      | Manager        |        15000 |          1000 |            500 |             0 |      13500 |
+|      6 | Bill     | 2020-09-07 | Male       | Banglore    | 9775564240      | Accountant     |        18000 |          1500 |            500 |             0 |      16000 |
+|      7 | Boby     | 2022-07-05 | Female     | Mumbai      | 97758745150     | Accountant     |        12000 |          1000 |            500 |             0 |      10500 |
+|      8 | Reshma   | 2021-05-04 | Female     | Banglore    | 9775548650      | HR             |        15000 |          1000 |            500 |             0 |      13500 |
+|      9 | Sandhya  | 2021-09-08 | Female     | Mumbai      | 775548650       | Clerk          |        12000 |          1000 |            500 |             0 |      10500 |
+|     10 | Shobha   | 2021-02-04 | Female     | Pune        | 9856248650      | Accountant     |        13000 |          1000 |            500 |             0 |      11500 |
++--------+----------+------------+------------+-------------+-----------------+----------------+--------------+---------------+----------------+---------------+------------+
+10 rows in set (0.00 sec)
